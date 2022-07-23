@@ -1,3 +1,10 @@
+let container = document.querySelector('#container');
+
+for (let i = 0; i < 9; i++) {
+    container.innerHTML += 
+    `<div class="square"></div>`; 
+}
+
 let squares = document.querySelectorAll('.square');
 let spanElements = document.querySelectorAll('span');
 let scoreElement = spanElements[0];
