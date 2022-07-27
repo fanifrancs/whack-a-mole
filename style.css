@@ -21,9 +21,7 @@ h2{
     margin: 0 auto;
     width: 300px;
     height: 300px;
-    justify-content: center;
-    align-content: center;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
     border: 1px solid gray;
 }
 

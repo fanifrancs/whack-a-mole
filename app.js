@@ -2,15 +2,14 @@ let container = document.querySelector('#container');
 
 for (let i = 0; i < 9; i++) {
     container.innerHTML += 
-    `<div class="square"></div>`; 
+    `<div class="square"></div>`;
 }
 
 let squares = document.querySelectorAll('.square');
 let spanElements = document.querySelectorAll('span');
 let scoreElement = spanElements[0];
 let timeElement = spanElements[1];
-let score = 0, time = 60;
-let hitPosition;
+let score = 0, time = 60, hitPosition;
 
 function showMole() {
     squares.forEach((square) => {
@@ -36,7 +35,8 @@ let timer = setInterval(countDown, 1000);
 function countDown() {
     if (time === 0) {
         clearInterval(timer);
-        alert(`Game Over! You scored ${score}.`);
+        clearInterval(moveMole);
+        alert(`GAME OVER ! You scored ${score}.`);
         location.reload();
     } else {
         time--;
