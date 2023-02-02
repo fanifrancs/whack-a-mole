@@ -1,26 +1,26 @@
-let container = document.querySelector('#container');
+const container = document.querySelector('#container');
 
 for (let i = 0; i < 9; i++) {
     container.innerHTML += 
     `<div class="square"></div>`;
 }
 
-let squares = document.querySelectorAll('.square');
-let spanElements = document.querySelectorAll('span');
-let scoreElement = spanElements[0];
-let timeElement = spanElements[1];
+const squares = document.querySelectorAll('.square'),
+      spanElements = document.querySelectorAll('span'),
+      scoreElement = spanElements[0],
+      timeElement = spanElements[1];
 let score = 0, time = 60, hitPosition;
 
 function showMole() {
     squares.forEach((square) => {
         square.classList.remove('mole');
     })
-    let randomPosition = squares[Math.floor(Math.random() * 9)];
+    const randomPosition = squares[Math.floor(Math.random() * 9)];
     randomPosition.classList.add('mole');
     hitPosition = randomPosition;
 }
 
-let moveMole = setInterval(showMole, 800);
+const moveMole = setInterval(showMole, 800);
 
 squares.forEach((square) => {
     square.addEventListener('click', () => {
@@ -30,7 +30,7 @@ squares.forEach((square) => {
     })
 })
 
-let timer = setInterval(countDown, 1000);
+const timer = setInterval(countDown, 1000);
 
 function countDown() {
     if (time === 0) {
